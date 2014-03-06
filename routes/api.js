@@ -21,16 +21,33 @@ var users = {
 		console.log(req);
 		console.log(res);
 
+		res.json({user:'all-users'});
 	},
 	byId : function(req,res){
+		console.log('users.byUserId');
+		
+		console.log(req);
+		console.log(res);
 
+		var userId = req.params.id;
+		res.json({userid:userId});
 	},
 	// registering a user
 	register : function(req,res){
+		console.log('users.register');
+		
+		console.log(req);
+		console.log(res);
 
+		res.json({user:'registering user'});
 	},
 	login : function(req,res){
+		console.log('users.login');
+		
+		console.log(req);
+		console.log(res);
 
+		res.json({user:'login user'});
 	}
 }
 
@@ -59,13 +76,8 @@ var messages = {
 exports.users = users;
 exports.messages = messages;
 
-exports.name = function (req, res) {
-  res.json({
-  	name: 'Bob'
-  });
-};
-
 exports.default = function (req,res){
+  console.log('Default entry point need to check access authorize to server');
   console.log(req);
   console.log(res);
 
