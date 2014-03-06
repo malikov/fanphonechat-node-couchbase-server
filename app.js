@@ -3,7 +3,7 @@
  */
 
 var express = require('express'),
-  api = require('./routes/api'),
+  api = require('./routes/api/'),
   http = require('http'),
   path = require('path');
 
