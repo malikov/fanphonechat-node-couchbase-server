@@ -21,8 +21,6 @@ var threads = {
 
 		return res.json({threads:'groupByUsers'});
 	},
-		
-	},
 	getByUser : function(req, res){
 		console.log('threads.getByUser');
 		
