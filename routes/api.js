@@ -58,6 +58,8 @@ var messages = {
 		
 		console.log(req);
 		console.log(res);
+
+		res.json({messages:'all'});
 	},
 	// get all threads for one user
 	byUserId : function(req,res){
@@ -66,8 +68,9 @@ var messages = {
 		console.log(req);
 		console.log(res);
 
-		var userId = req.params.id;
+		var paramId = req.params.id;
 
+		res.json({messageId: paramId});
 	}
 
 }
