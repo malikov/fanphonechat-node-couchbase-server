@@ -59,11 +59,17 @@ if (app.get('env') === 'production') {
 // serve index and view partials
 app.get('/', api.default);
 app.get('/users', api.users.all);
-app.get('/users/:id', api.users.byId);
+app.get('/users/:id', api.users.getById);
 
 
-app.get('/messages', api.messages.all);
-app.get('/messages/users/:id', api.messages.byUserId);
+app.get('/threads', api.threads.all); //get all threads or topic
+app.get('/threads/users', api.threads.groupByUsers); //get all threads or topic grouped by users
+app.get('/threads/users/:id', api.threads.getByUser); //get all thread in which users/id participated
+
+
+app.get('/messages',api.messages.all);
+app.get('/messages/threads',api.messages.groupByThreads); // get messages grouped by threads
+app.get('/messages/threads/:threadId',api.messages.getByThread); //get all messages in thread with threadId
 
 // Socket.io Communication
 io.sockets.on('connection', require('./routes/socket'));

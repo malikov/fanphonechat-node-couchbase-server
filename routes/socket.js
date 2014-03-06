@@ -2,7 +2,10 @@
  * Serve content over a socket
  */
 
-//associative sockets array for each thread 
+//associative sockets array for each thread, one socket per thread 
+//if all users have left the thread or havent used the thread in a 
+//LONG WHILE lol then remove and delete the socket
+
 var sockets = {};
 
 module.exports = function (socket) {
