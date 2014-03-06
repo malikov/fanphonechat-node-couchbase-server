@@ -63,6 +63,7 @@ app.get('/users/:id', api.users.getById);
 
 
 app.get('/threads', api.threads.all); //get all threads or topic
+app.get('/threads/:id',api.threads.getById);
 app.get('/threads/users', api.threads.groupByUsers); //get all threads or topic grouped by users
 app.get('/threads/users/:id', api.threads.getByUser); //get all thread in which users/id participated
 

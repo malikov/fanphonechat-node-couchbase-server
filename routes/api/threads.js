@@ -12,6 +12,19 @@ var threads = {
 
 		return res.json({threads:'all'});
 	},
+	getById : function(req, res){
+		console.log('threads.getById');
+		
+		console.log(req);
+		console.log(res);
+
+		var paramId = req.params.id || null; //fetching the userid
+
+		if(paramId === null)
+			return res.json({threads : 'failed request provide an Id for the thread'});
+
+		return res.json({threads: paramId});
+	},
 	// get all threads for one user
 	groupByUsers : function(req,res){
 		console.log('threads.groupByUsers');
@@ -30,7 +43,7 @@ var threads = {
 		var paramId = req.params.id || null; //fetching the userid
 
 		if(paramId === null)
-			return res.json({threads : 'failed request provide an Id'});
+			return res.json({threads : 'failed request provide an userId'});
 
 		return res.json({threads: paramId});
 	}
