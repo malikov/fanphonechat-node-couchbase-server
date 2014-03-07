@@ -10,15 +10,15 @@ Node server for FanPhoneChat
   
 6. Install socket.io
 
-  npm install socket.io
+        npm install socket.io
 
 5. Install express
 
-  npm install express
+        npm install express
   
 6. Install couchbase
 
-  npm install couchbase
+        npm install couchbase
 
 TODO
 
