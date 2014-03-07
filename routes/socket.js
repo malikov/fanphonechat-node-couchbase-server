@@ -10,7 +10,7 @@ var sockets = {};
 
 module.exports = function (socket) {
   console.log('A connection was made');
-  console.log(socket);
+  util.inspect(socket);
   
   socket.emit('send:name', {
     name: 'Bob'

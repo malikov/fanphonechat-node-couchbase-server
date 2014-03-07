@@ -13,6 +13,7 @@
 	
 
  */
+var util = require('util');
 
 exports.users = require('./users');
 exports.threads = require('./threads');
@@ -20,8 +21,9 @@ exports.messages = require('./messages');
 
 exports.default = function (req,res){
   console.log('Default entry point need to check access authorize to server');
-  console.log(req);
-  console.log(res);
+  
+  util.inspect(req);
+  util.inspect(res);
 
   res.json({});
 }

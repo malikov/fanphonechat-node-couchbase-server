@@ -1,22 +1,26 @@
 /*
 	thread api definition
 */
+var util = require('util');
 
-var threads = {
-	// get all threads
-	all : function(req,res){
+var threads = function(){};
+
+// get all threads
+threads.all = function(req,res){
 		console.log('threads.all');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		return res.json({threads:'all'});
-	},
-	getById : function(req, res){
+}
+
+// get threads by id
+threads.getById = function(req, res){
 		console.log('threads.getById');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		var paramId = req.params.id || null; //fetching the userid
 
@@ -24,21 +28,25 @@ var threads = {
 			return res.json({threads : 'failed request provide an Id for the thread'});
 
 		return res.json({threads: paramId});
-	},
-	// get all threads for one user
-	groupByUsers : function(req,res){
+}
+	
+
+// get all threads for one user
+threads.groupByUsers = function(req,res){
 		console.log('threads.groupByUsers');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		return res.json({threads:'groupByUsers'});
-	},
-	getByUser : function(req, res){
+}
+
+// get threads by user
+threads.getByUser = function(req, res){
 		console.log('threads.getByUser');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		var paramId = req.params.id || null; //fetching the userid
 
@@ -46,8 +54,6 @@ var threads = {
 			return res.json({threads : 'failed request provide an userId'});
 
 		return res.json({threads: paramId});
-	}
-
 }
 
 module.exports = threads;

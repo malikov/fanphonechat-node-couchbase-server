@@ -3,6 +3,7 @@
  */
 
 var express = require('express'),
+  util = require('util'),
   api = require('./routes/api/'),
   http = require('http'),
   path = require('path');
@@ -13,16 +14,16 @@ var io = require('socket.io').listen(server);
 
 console.log('-------- Module dependecies ------------');
 
-console.log(express);
-console.log(api);
-console.log(http);
-console.log(path);
+util.inspect(express);
+util.inspect(api);
+util.inspect(http);
+util.inspect(path);
 
-console.log('-------- app / server / io ------------');
+util.inspect('-------- app / server / io ------------');
 
-console.log(app);
-console.log(server);
-console.log(io);
+util.inspect(app);
+util.inspect(server);
+util.inspect(io);
 
 console.log('-------- Module dependecies END ------------');
 

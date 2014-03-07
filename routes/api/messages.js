@@ -1,32 +1,37 @@
 /*
 	Api definition for messages
 */
+var util = require('util');
 
-var messages = {
-	// get all threads
-	all : function(req,res){
+var messages = function(){};
+
+
+// get all messages;
+messages.all = function(req,res){
 		console.log('messages.all');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		return res.json({messages:'all'});
-	},
-	// get all threads for one user
-	groupByThreads : function(req,res){
+}
+
+// get all threads for one user
+messages.groupByThreads = function(req,res){
 		console.log('messages.groupByThreads');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		
 		return res.json({messages: "groupByThreads"});
-	},
-	getByThread : function(req,res){
+}
+
+messages.getByThread = function(req,res){
 		console.log('users.getByThread');
 		
-		console.log(req);
-		console.log(res);
+		util.inspect(req);
+		util.inspect(res);
 
 		var threadId = req.params.id || false;
 
@@ -34,8 +39,7 @@ var messages = {
 			return res.json({messages : 'failed getByThread need Id'});
 
 		return res.json({messages:threadId});
-	}
-
 }
+
 
 module.exports = messages;
