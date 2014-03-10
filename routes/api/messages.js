@@ -16,6 +16,21 @@ messages.all = function(req,res){
 		return res.json({messages:'all'});
 }
 
+// get message by id
+messages.getById = function(req,res){
+		console.log('messages.getById');
+		
+		util.inspect(req);
+		util.inspect(res);
+
+		var userId = req.params.id || false;
+
+		if(!userId)
+			return res.json({user : 'failed getById need Id'});
+
+		return res.json({user:userId});
+}
+
 // get all threads for one user
 messages.groupByThreads = function(req,res){
 		console.log('messages.groupByThreads');

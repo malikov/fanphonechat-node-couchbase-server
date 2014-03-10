@@ -70,6 +70,7 @@ app.get('/threads/users/:id', api.threads.getByUser); //get all thread in which 
 
 
 app.get('/messages',api.messages.all);
+app.get('/messages/:id',api.messages.getById);
 app.get('/messages/threads',api.messages.groupByThreads); // get messages grouped by threads
 app.get('/messages/threads/:threadId',api.messages.getByThread); //get all messages in thread with threadId
 
