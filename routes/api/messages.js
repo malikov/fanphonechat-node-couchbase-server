@@ -1,7 +1,9 @@
+'use strict';
 /*
 	Api definition for messages
 */
 var util = require('util');
+var messageDb = require('../../models/Message');
 
 var messages = function(){};
 
@@ -23,12 +25,12 @@ messages.getById = function(req,res){
 		util.inspect(req);
 		util.inspect(res);
 
-		var userId = req.params.id || false;
+		var id = req.params.id || false;
 
-		if(!userId)
-			return res.json({user : 'failed getById need Id'});
+		if(!id)
+			return res.json({message : 'failed getById need Id'});
 
-		return res.json({user:userId});
+		return res.json({message:userId});
 }
 
 // get all threads for one user

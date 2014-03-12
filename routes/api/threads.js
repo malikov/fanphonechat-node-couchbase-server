@@ -1,7 +1,9 @@
+'use strict';
 /*
 	thread api definition
 */
 var util = require('util');
+var messageDb = require('../../models/Thread');
 
 var threads = function(){};
 

@@ -1,7 +1,9 @@
+'use strict';
 /*
 	api definition for users
 */
 var util = require('util');
+var messageDb = require('../../models/User');
 
 var users = function() {};
  
